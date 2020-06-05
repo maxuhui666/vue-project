@@ -7,7 +7,10 @@ import api from "./http/api";
 import http from "./http/http";
 import "./assets/style.scss";
 import * as filters from "./assets/filters";
+// 按需引入ElementUI
+import { Button } from "element-ui";
 
+Vue.use(Button);
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key]);
 });

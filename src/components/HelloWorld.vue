@@ -14,6 +14,8 @@
         <td>{{ eq.creditedTime | dateFormat("YYYY-MM-DD") }}</td>
       </tr>
     </table>
+
+    <el-button type="primary">222</el-button>
   </div>
 </template>
 
