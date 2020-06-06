@@ -15,7 +15,7 @@
       </tr>
     </table>
 
-    <el-button type="primary">222</el-button>
+    <el-button type="primary" @click="getData">刷新</el-button>
   </div>
 </template>
 
@@ -36,6 +36,7 @@ export default {
   },
   methods: {
     getData() {
+      this.pageNumber++;
       this.$http
         .post(this.$api.test1.url, {
           pageNumber: this.pageNumber
