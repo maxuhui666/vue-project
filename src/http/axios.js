@@ -6,9 +6,7 @@ import { Message } from "element-ui";
  */
 axios.interceptors.request.use(
   config => {
-    /**
-     *  请求前最后的配置
-     */
+   // 请求前最后的配置
     config.headers["terminal"] = 1;
     return config;
   },

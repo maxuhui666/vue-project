@@ -1,53 +1,27 @@
 import axios from "axios";
-axios.defaults.timeout = 5000; // 请求超时
-axios.defaults.baseURL = "/api"; // 增加请求默认路径前缀
+// 请求超时
+axios.defaults.timeout = 5000;
+// 增加请求默认路径前缀
+axios.defaults.baseURL = "/api";
+// 请求方式
+const postMethod = new Map();
+postMethod.set(1, "application/json; charset=utf-8");
+postMethod.set(2, "application/x-www-form-urlencoded; charset=utf-8");
 
 export default {
-  /**
-   * get 请求=自定义请求头
-   */
-  getHeader(url, params, headers) {
-    let options = {};
-
-    if (params) {
-      options.params = params;
-    }
-    if (headers) {
-      options.headers = headers;
-    }
-    return axios.get(url, options);
-  },
-
-  /**
-   * get 请求=默认请求头
-   */
   get(url, params) {
     let options = {};
-
     if (params) {
       options.params = params;
     }
     return axios.get(url, options);
   },
 
-  /**
-   * post 请求自定义请求头
-   */
-  postHeader(url, headers, data) {
-    let options = {};
-    if (headers) {
-      options.headers = headers;
-    }
-    return axios.post(url, data, options);
-  },
-  /**
-   * post 请求=默认请求头
-   */
-  post(url, data) {
+  post(url, data, method = 1) {
     let options = {};
     options.headers = {
       headers: {
-        "Content-Type": "application/json; charset=utf-8"
+        "Content-Type": postMethod.get(method)
       }
     };
     return axios.post(url, data, options);
