@@ -1,9 +1,6 @@
 import axios from "axios";
-// 请求超时
 axios.defaults.timeout = 5000;
-// 增加请求默认路径前缀
-axios.defaults.baseURL = "/api";
-// 请求方式
+axios.defaults.baseURL = "/form_manage";
 const postMethod = new Map();
 postMethod.set(1, "application/json; charset=utf-8");
 postMethod.set(2, "application/x-www-form-urlencoded; charset=utf-8");

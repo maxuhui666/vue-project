@@ -1,16 +1,22 @@
 <template>
   <div class="home">
-    <HelloWorld />
+    <el-row>
+      <el-col v-bind:span="24">
+        <top-menu />
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col v-bind:span="24">
+        <router-view />
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
-import HelloWorld from "../components/HelloWorld";
-
+import TopMenu from "../components/TopMenu";
 export default {
   name: "Home",
-  components: {
-    HelloWorld
-  }
+  components: { TopMenu }
 };
 </script>
