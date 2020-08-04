@@ -44,14 +44,11 @@ export default {
       this.insertDialogVisible = false
     },
     getClassificationTree () {
-      this.$http
-        .get(this.$api.dictionaryClassification.listTree, {})
-        .then(response => {
-          console.log(response)
-        })
-        .catch(error => {
-          console.log(error)
-        })
+      this.$http.get(this.$api.dictionaryClassification.listTree, {}).then(response => {
+        console.log(response)
+      }).catch(error => {
+        console.log(error)
+      })
     }
   }
 }

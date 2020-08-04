@@ -94,26 +94,23 @@ export default {
     insertSave (formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          this.$http
-            .post(
-              this.$api.dictionaryClassification.insert,
-              this.insertDictionary
-            )
-            .then(response => {
-              if (response.status === 0) {
-                this.$message.success('成功！')
-                this.$emit('closeDialog')
-                this.insertDictionary = {
-                  pid: null,
-                  name: '',
-                  sort: 0,
-                  remark: ''
-                }
+          this.$http.post(
+            this.$api.dictionaryClassification.insert,
+            this.insertDictionary
+          ).then(response => {
+            if (response.status === 0) {
+              this.$message.success('成功！')
+              this.$emit('closeDialog')
+              this.insertDictionary = {
+                pid: null,
+                name: '',
+                sort: 0,
+                remark: ''
               }
-            })
-            .catch(error => {
-              console.log(error)
-            })
+            }
+          }).catch(error => {
+            console.log(error)
+          })
         } else {
           this.$message.error('失败！')
           return false

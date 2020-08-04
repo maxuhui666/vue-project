@@ -19,16 +19,11 @@ export default {
       this.$store.commit('increment')
     },
     listTableInfoData: function () {
-      this.$http
-        .get(this.$api.tableInfo.listTableInfoData, {
-          tableId: this.tableId
-        })
-        .then(response => {
-          console.log(response.data)
-        })
-        .catch(error => {
-          console.log(error)
-        })
+      this.$http.get(this.$api.tableInfo.listTableInfoData, { tableId: this.tableId }).then(response => {
+        console.log(response.data)
+      }).catch(error => {
+        console.log(error)
+      })
     }
   }
 }
