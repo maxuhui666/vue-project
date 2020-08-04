@@ -66,32 +66,32 @@
 
 <script>
 export default {
-  name: "InsertClassification",
-  props: ["closeDialog"],
-  data() {
+  name: 'InsertClassification',
+  props: ['closeDialog'],
+  data () {
     return {
       // 分类列表
       classificationList: [],
       // 插入分类的数据对象
-      insertDictionary: { pid: null, name: "", sort: 0, remark: "" },
+      insertDictionary: { pid: null, name: '', sort: 0, remark: '' },
       insertDictionaryRule: {
         name: [
-          { require: true, message: "请输入名称", trigger: "blur" },
+          { require: true, message: '请输入名称', trigger: 'blur' },
           {
             min: 2,
             max: 30,
-            message: "请输入2到20个字符之间",
-            trigger: "blur"
+            message: '请输入2到20个字符之间',
+            trigger: 'blur'
           }
         ]
       }
-    };
+    }
   },
-  created() {
-    this.listDictionaryClassification();
+  created () {
+    this.listDictionaryClassification()
   },
   methods: {
-    insertSave(formName) {
+    insertSave (formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
           this.$http
@@ -101,39 +101,34 @@ export default {
             )
             .then(response => {
               if (response.status === 0) {
-                this.$message.success("成功！");
-                // 关闭对话框
-                this.$emit("closeDialog");
-                // 还原对话框的值
+                this.$message.success('成功！')
+                this.$emit('closeDialog')
                 this.insertDictionary = {
                   pid: null,
-                  name: "",
+                  name: '',
                   sort: 0,
-                  remark: ""
-                };
+                  remark: ''
+                }
               }
             })
             .catch(error => {
-              console.log(error);
-            });
+              console.log(error)
+            })
         } else {
-          this.$message.error("失败！");
-          return false;
+          this.$message.error('失败！')
+          return false
         }
-      });
+      })
     },
-    listDictionaryClassification() {
-      this.$http
-        .get(this.$api.dictionaryClassification.list, {})
-        .then(response => {
-          this.classificationList = response.data;
-        })
-        .catch(error => {
-          console.log(error);
-        });
+    listDictionaryClassification () {
+      this.$http.get(this.$api.dictionaryClassification.list, {}).then(response => {
+        this.classificationList = response.data
+      }).catch(error => {
+        console.log(error)
+      })
     }
   }
-};
+}
 </script>
 
 <style scoped></style>

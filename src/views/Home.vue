@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import TopMenu from "../components/TopMenu";
+import TopMenu from '../components/TopMenu'
 export default {
-  name: "Home",
+  name: 'Home',
   components: { TopMenu }
-};
+}
 </script>

@@ -1,12 +1,12 @@
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
-import "./http/axios";
-import api from "./http/api";
-import http from "./http/http";
-import "./assets/style.scss";
-import * as filters from "./assets/filters";
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
+import './http/axios'
+import api from './http/api'
+import http from './http/http'
+import './assets/style.scss'
+import * as filters from './assets/filters'
 import {
   Button,
   Input,
@@ -25,36 +25,36 @@ import {
   Option,
   OptionGroup,
   Tree
-} from "element-ui";
+} from 'element-ui'
 
-Vue.use(Tree);
-Vue.use(Select);
-Vue.use(Option);
-Vue.use(OptionGroup);
-Vue.use(Button);
-Vue.use(Dialog);
-Vue.use(Input);
-Vue.use(InputNumber);
-Vue.use(Form);
-Vue.use(FormItem);
-Vue.use(Row);
-Vue.use(Col);
-Vue.use(Icon);
-Vue.use(Menu);
-Vue.use(MenuItem);
-Vue.use(Submenu);
-Vue.prototype.$message = Message;
+Vue.use(Tree)
+Vue.use(Select)
+Vue.use(Option)
+Vue.use(OptionGroup)
+Vue.use(Button)
+Vue.use(Dialog)
+Vue.use(Input)
+Vue.use(InputNumber)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(Icon)
+Vue.use(Menu)
+Vue.use(MenuItem)
+Vue.use(Submenu)
+Vue.prototype.$message = Message
 
 Object.keys(filters).forEach(key => {
-  Vue.filter(key, filters[key]);
-});
+  Vue.filter(key, filters[key])
+})
 
-Vue.prototype.$api = api;
-Vue.prototype.$http = http;
-Vue.config.productionTip = false;
+Vue.prototype.$api = api
+Vue.prototype.$http = http
+Vue.config.productionTip = false
 
 new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount("#app");
+}).$mount('#app')

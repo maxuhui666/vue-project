@@ -16,46 +16,45 @@
       v-bind:title="insertDialogTitle"
       v-bind:visible.sync="insertDialogVisible"
     >
-      <!--引用增加组件传递关闭窗口的回调函数-->
       <InsertClassification v-on:closeDialog="closeDialog" />
     </el-dialog>
   </div>
 </template>
 
 <script>
-import InsertClassification from "@/components/InsertClassification";
+import InsertClassification from '@/components/InsertClassification'
 
 export default {
-  name: "Dictionary",
+  name: 'Dictionary',
   components: { InsertClassification },
-  data() {
+  data () {
     return {
-      insertDialogTitle: "新增字典分类",
+      insertDialogTitle: '新增字典分类',
       insertDialogVisible: false,
       // 树节点
       classificationTree: []
-    };
+    }
   },
-  created() {
+  created () {
     // 获取字典分类树结构
-    this.getClassificationTree();
+    this.getClassificationTree()
   },
   methods: {
-    closeDialog() {
-      this.insertDialogVisible = false;
+    closeDialog () {
+      this.insertDialogVisible = false
     },
-    getClassificationTree() {
+    getClassificationTree () {
       this.$http
         .get(this.$api.dictionaryClassification.listTree, {})
         .then(response => {
-          console.log(response);
+          console.log(response)
         })
         .catch(error => {
-          console.log(error);
-        });
+          console.log(error)
+        })
     }
   }
-};
+}
 </script>
 
 <style scoped lang="scss"></style>
