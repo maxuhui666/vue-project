@@ -5,9 +5,9 @@
         <el-col v-bind:span="6" v-bind:offset="9">
           <el-form-item prop="username">
             <el-input
-              type="text"
-              v-model="loginInfo.username"
-              placeholder="请输入用户名"
+                type="text"
+                v-model="loginInfo.username"
+                placeholder="请输入用户名"
             />
           </el-form-item>
         </el-col>
@@ -16,9 +16,9 @@
         <el-col v-bind:span="6" v-bind:offset="9">
           <el-form-item prop="password">
             <el-input
-              type="password"
-              v-model="loginInfo.password"
-              placeholder="请输入密码"
+                type="password"
+                v-model="loginInfo.password"
+                placeholder="请输入密码"
             />
           </el-form-item>
         </el-col>
@@ -58,6 +58,12 @@ export default {
           }
         ]
       }
+    }
+  },
+  created () {
+    const userName = this.$store.state.userInfo
+    if (userName !== null) {
+      this.$router.push('/home')
     }
   },
   methods: {

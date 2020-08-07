@@ -5,6 +5,7 @@ import Login from '../views/Login'
 import About from '../views/About'
 import Dictionary from '../views/Dictionary'
 import Table from '../views/FormTableInfo'
+import CommonlyUsedField from '@/views/CommonlyUsedField'
 Vue.use(VueRouter)
 
 const routes = [
@@ -31,6 +32,11 @@ const routes = [
         path: '/table',
         name: 'Table',
         component: Table
+      },
+      {
+        path: '/commonlyUsedField',
+        name: 'CommonlyUsedField',
+        component: CommonlyUsedField
       }
     ]
   },

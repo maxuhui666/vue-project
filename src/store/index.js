@@ -5,13 +5,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    count: 0
+    userInfo: 'Maxuhui'
   },
-  mutations: {
-    increment (state) {
-      state.count++
-    }
-  },
+  mutations: {},
   actions: {},
   modules: {}
 })

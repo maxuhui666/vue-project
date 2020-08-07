@@ -29,6 +29,14 @@ export default {
     updateById: '/form_manage/api/dictionary/updateDictionClassification'
   },
   tableInfo: {
-    listTableInfoData: '/form_manage/api/table/listTableInfoData'
+    listTableInfoData: '/form_manage/api/table/listTableInfoData',
+    listTables: '/form_manage/api/table/listTableInfos',
+    listColumnInfos: '/form_manage/api/table/listColumnInfos'
+  },
+  // 常用字段
+  commonlyUsedField: {
+    insert: '/form_manage/api/commonly/insertCommonlyUsedField',
+    select: '/form_manage/api/commonly/listCommonlyUsedField'
   }
+
 }

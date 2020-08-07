@@ -5,6 +5,7 @@ import store from './store'
 import './http/axios'
 import api from './http/api'
 import http from './http/http'
+import enumStore from '@/assets/enumStore'
 import './assets/style.scss'
 import * as filters from './assets/filters'
 import {
@@ -24,9 +25,15 @@ import {
   Select,
   Option,
   OptionGroup,
-  Tree
+  Tree,
+  Table,
+  TableColumn,
+  Switch
 } from 'element-ui'
 
+Vue.use(Switch)
+Vue.use(Table)
+Vue.use(TableColumn)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
@@ -49,6 +56,7 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
+Vue.prototype.$enumStore = enumStore
 Vue.prototype.$api = api
 Vue.prototype.$http = http
 Vue.config.productionTip = false
