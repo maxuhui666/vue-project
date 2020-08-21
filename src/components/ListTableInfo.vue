@@ -1,20 +1,20 @@
 <template>
   <div class="listTableInfo">
     <el-table
-        :data="tableData"
-        style="width: 100%">
+      :data="tableData"
+      style="width: 100%">
       <el-table-column type="expand">
         <template slot-scope="props">
           <ListColumnInfo v-bind:id="props.row.id"/>
         </template>
       </el-table-column>
       <el-table-column
-          label="表名"
-          prop="tableName">
+        label="表名"
+        prop="tableName">
       </el-table-column>
       <el-table-column
-          label="描述"
-          prop="remark">
+        label="描述"
+        prop="remark">
       </el-table-column>
     </el-table>
   </div>

@@ -8,8 +8,9 @@
     <el-row>
       <el-col v-bind:span="3">展示</el-col>
     </el-row>
-    <el-dialog v-bind:title="insertDialogTitle" v-bind:visible.sync="insertDialogVisible" v-bind:destroy-on-close="true">
-      <InsertClassification v-on:closeDialog="closeDialog" />
+    <el-dialog v-bind:title="insertDialogTitle" v-bind:visible.sync="insertDialogVisible"
+               v-bind:destroy-on-close="true">
+      <InsertClassification v-on:closeDialog="closeDialog"/>
     </el-dialog>
   </div>
 </template>
@@ -47,5 +48,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
 </style>

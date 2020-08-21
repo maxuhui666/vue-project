@@ -28,7 +28,8 @@ import {
   Tree,
   Table,
   TableColumn,
-  Switch
+  Switch,
+  Popconfirm
 } from 'element-ui'
 
 Vue.use(Switch)
@@ -50,6 +51,7 @@ Vue.use(Icon)
 Vue.use(Menu)
 Vue.use(MenuItem)
 Vue.use(Submenu)
+Vue.use(Popconfirm)
 Vue.prototype.$message = Message
 
 Object.keys(filters).forEach(key => {

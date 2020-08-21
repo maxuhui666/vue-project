@@ -36,7 +36,8 @@ export default {
   // 常用字段
   commonlyUsedField: {
     insert: '/form_manage/api/commonly/insertCommonlyUsedField',
-    select: '/form_manage/api/commonly/listCommonlyUsedField'
+    select: '/form_manage/api/commonly/listCommonlyUsedField',
+    delete: '/form_manage/api/commonly/deleteCommonlyUsedFieldById'
   }
 
 }

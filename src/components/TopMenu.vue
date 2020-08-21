@@ -8,6 +8,7 @@
         <el-menu-item index="/table">数据表管理</el-menu-item>
         <el-menu-item index="/commonlyUsedField">常用字段</el-menu-item>
       </el-submenu>
+      <el-menu-item index="/templateType">表单分类管理</el-menu-item>
       <el-menu-item index="/about">关于</el-menu-item>
       <el-menu-item v-on:click="logout">退出</el-menu-item>
     </el-menu>

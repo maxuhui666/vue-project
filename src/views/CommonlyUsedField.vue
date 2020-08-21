@@ -12,7 +12,14 @@
           <el-table-column prop="dataType" label="类型" width="180"/>
           <el-table-column prop="columnLength" label="长度"/>
           <el-table-column prop="remark" label="说明"/>
-          <el-table-column prop="gmtCreate" label="创建时间" v-bind:formatter="dateFormat" />
+          <el-table-column prop="gmtCreate" label="创建时间" v-bind:formatter="dateFormat"/>
+          <el-table-column label="操作">
+            <template slot-scope="scope">
+              <el-popconfirm title="您确定要删除吗？" v-on:onConfirm="deleteById(scope.row.id)">
+                <el-button slot="reference" type="text" >删除</el-button>
+              </el-popconfirm>
+            </template>
+          </el-table-column>
         </el-table>
       </el-col>
     </el-row>
@@ -60,18 +67,28 @@ export default {
           console.log(error)
         })
     },
-    // 关闭编辑窗口
     closeDialog: function () {
+      this.getData()
       this.editPageVisible = false
     },
-    // 打开编辑窗口
     openDialog: function () {
       this.editPageVisible = true
+    },
+    deleteById: function (id) {
+      this.$http.get(this.$api.commonlyUsedField.delete, { id: id })
+        .then(response => {
+          if (response.status === 0) {
+            this.$message.success('删除成功')
+            this.getData()
+          }
+        }).catch(error => {
+          console.log(error)
+        })
     }
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>

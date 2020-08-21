@@ -5,12 +5,12 @@
         <el-col v-bind:span="6">
           <el-form-item prop="pid">
             <el-select v-model="insertDictionary.pid" placeholder="请选择父级">
-              <el-option v-for="item of classificationList" v-bind:key="item.id" v-bind:label="item.name" v-bind:value="item.id"/>
+              <el-option v-for="item of classificationList" v-bind:key="item.id" v-bind:label="item.name"
+                         v-bind:value="item.id"/>
             </el-select>
           </el-form-item>
         </el-col>
       </el-row>
-
       <el-row type="flex" justify="center">
         <el-col v-bind:span="6">
           <el-form-item prop="name">
@@ -18,7 +18,6 @@
           </el-form-item>
         </el-col>
       </el-row>
-
       <el-row type="flex" justify="center">
         <el-col v-bind:span="6">
           <el-form-item prop="sort">
@@ -26,7 +25,6 @@
           </el-form-item>
         </el-col>
       </el-row>
-
       <el-row type="flex" justify="center">
         <el-col v-bind:span="6">
           <el-form-item prop="remark">
@@ -34,7 +32,6 @@
           </el-form-item>
         </el-col>
       </el-row>
-
       <el-row type="flex" justify="center">
         <el-col v-bind:span="6">
           <el-button type="primary" v-on:click="insertSave('insertDictionary')">提交</el-button>
@@ -50,9 +47,7 @@ export default {
   props: ['closeDialog'],
   data () {
     return {
-      // 分类列表
       classificationList: [],
-      // 插入分类的数据对象
       insertDictionary: { pid: null, name: '', sort: 0, remark: '' },
       insertDictionaryRule: {
         name: [
@@ -79,12 +74,6 @@ export default {
               if (response.status === 0) {
                 this.$message.success('成功！')
                 this.$emit('closeDialog')
-                this.insertDictionary = {
-                  pid: null,
-                  name: '',
-                  sort: 0,
-                  remark: ''
-                }
               }
             }).catch(error => {
               console.log(error)
@@ -107,4 +96,6 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+
+</style>

@@ -60,7 +60,8 @@ export default {
           { require: true, message: '请选择字段类型', trigger: 'blur' }
         ],
         remark: [
-          { require: true, message: '选输入字段长度', trigger: 'blur' }
+          { require: true, message: '选输入字段长度', trigger: 'blur' },
+          { require: true, min: 2, max: 1024, message: '备注需要在2到1-1024个字符之间', trigger: 'blur' }
         ]
       }
     }
@@ -79,6 +80,7 @@ export default {
           this.$emit('closeDialog')
         } else {
           this.$message.error('失败！')
+          return false
         }
       })
     }

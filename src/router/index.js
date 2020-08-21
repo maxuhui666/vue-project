@@ -6,6 +6,8 @@ import About from '../views/About'
 import Dictionary from '../views/Dictionary'
 import Table from '../views/FormTableInfo'
 import CommonlyUsedField from '@/views/CommonlyUsedField'
+import TemplateType from '@/views/TemplateType'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -37,6 +39,11 @@ const routes = [
         path: '/commonlyUsedField',
         name: 'CommonlyUsedField',
         component: CommonlyUsedField
+      },
+      {
+        path: '/templateType',
+        name: 'TemplateType',
+        component: TemplateType
       }
     ]
   },
