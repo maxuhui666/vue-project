@@ -16,7 +16,7 @@
           <el-table-column label="操作">
             <template slot-scope="scope">
               <el-popconfirm title="您确定要删除吗？" v-on:onConfirm="deleteById(scope.row.id)">
-                <el-button slot="reference" type="text" >删除</el-button>
+                <el-button slot="reference" type="text">删除</el-button>
               </el-popconfirm>
             </template>
           </el-table-column>
