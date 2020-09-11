@@ -1,19 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home'
-import Login from '../views/Login'
-import About from '../views/About'
-import Dictionary from '../views/Dictionary'
-import Table from '../views/FormTableInfo'
-import CommonlyUsedField from '@/views/CommonlyUsedField'
-import TemplateType from '@/views/TemplateType'
+import Home from '../views/home/Home'
+import TodoList from '@/views/todo-list/TodoList'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    redirect: '/login'
+    redirect: '/home'
   },
   {
     path: '/home',
@@ -21,36 +16,11 @@ const routes = [
     component: Home,
     children: [
       {
-        path: '/about',
-        name: 'About',
-        component: About
-      },
-      {
-        path: '/dictionary',
-        name: 'Dictionary',
-        component: Dictionary
-      },
-      {
-        path: '/table',
-        name: 'Table',
-        component: Table
-      },
-      {
-        path: '/commonlyUsedField',
-        name: 'CommonlyUsedField',
-        component: CommonlyUsedField
-      },
-      {
-        path: '/templateType',
-        name: 'TemplateType',
-        component: TemplateType
+        path: '/',
+        name: 'todo-list',
+        component: TodoList
       }
     ]
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login
   }
 ]
 

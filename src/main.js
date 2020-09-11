@@ -5,7 +5,6 @@ import store from './store'
 import './http/axios'
 import api from './http/api'
 import http from './http/http'
-import enumStore from '@/assets/enumStore'
 import './assets/style.scss'
 import * as filters from './assets/filters'
 import {
@@ -58,7 +57,6 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
-Vue.prototype.$enumStore = enumStore
 Vue.prototype.$api = api
 Vue.prototype.$http = http
 Vue.config.productionTip = false
