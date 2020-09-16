@@ -23,4 +23,5 @@ export default {
     }
     return axios.post(url, data, options)
   }
+
 }

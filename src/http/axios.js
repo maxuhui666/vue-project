@@ -55,10 +55,10 @@ axios.interceptors.response.use(
           Message.error('网络超时！')
           break
         default:
-          return Message.reject(error)
+          return Message.error(error)
       }
     } else {
-      Message.log('连接到服务器失败！')
+      Message.error('连接到服务器失败！')
     }
   }
 )
